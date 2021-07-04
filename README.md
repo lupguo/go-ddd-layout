@@ -4,6 +4,8 @@
 
 最近一年一直在尝试DDD落地，也在重新思考DDD的的布局如何更合理，结合最近项目落地后，重新构思了一版DDD的目录结构，后续会结合项目以及DDD理解，还会持续不断演进
 
+相关文章参考: https://tkstorm.com/posts-list/software-engineering/cloud-native/ddd-think/
+
 ## 目录说明
 
 ```
