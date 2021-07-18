@@ -27,9 +27,9 @@
 │    │    ├── mqs
 │    │    └── rds
 │    └── interfaces     # 接口层，依赖application层
-│        ├── search_hand.go
-│        ├── tag_hand.go
-│        └── upload_hand.go
+│        ├── search_intf.go
+│        ├── tag_intf.go
+│        └── upload_intf.go
 ├── build               # 多操作系统，编译文件生成
 ├── cmd                 
 │    └── myapp          # 目录文件夹为应用名称，期间仅包含一个main.go文件
