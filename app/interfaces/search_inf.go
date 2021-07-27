@@ -6,6 +6,7 @@ import (
 	"github.com/lupguo/ddd-layout/app/application"
 )
 
+// SearchInf 搜索接口
 type SearchInf struct {
 	app *application.ImgSearchApp
 }
