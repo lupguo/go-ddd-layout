@@ -9,6 +9,6 @@ type ESearch struct {
 
 }
 
-func (e *ESearch) Search(req *entity.SearchReq) []*repository.SearchImage {
+func (e *ESearch) Search(req *entity.SearchKeywords) []*repository.SearchImage {
 	panic("implement me")
 }

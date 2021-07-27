@@ -9,6 +9,6 @@ type SearchImage struct {
 }
 
 type IReposSearch interface {
-	Search(req *entity.SearchReq) []*SearchImage
+	Search(req *entity.SearchKeywords) []*SearchImage
 	// SearchTags(req *entity.SearchTagReq) []*SearchImage
 }

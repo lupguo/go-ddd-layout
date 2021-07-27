@@ -1,7 +1,7 @@
 package entity
 
-// SearchReq 搜索请求
-type SearchReq struct {
+// SearchKeywords 搜索请求
+type SearchKeywords struct {
 	Keywords string
 	TagNames string
 }
