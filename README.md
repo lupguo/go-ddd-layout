@@ -9,39 +9,33 @@
 ## 目录说明
 
 ```
-.
 ├── Makefile
 ├── README.md
 ├── app
-│    ├── application    # 应用层，内部文件以`_app.go`结尾
-│    │    ├── image_search_app.go
-│    │    └── image_upload_app.go
-│    ├── domain         # 领域层，依赖仓储接口
-│    │    ├── entity        # 领域实体，以`_entity.go`结尾
-│    │    ├── repository    # 仓储接口，以`_repos.go`结尾
-│    │    ├── service       # 领域服务，以`_service.go`结尾
-│    │    └── valobj        # 值对象，以`_valobj.go`结尾
-│    ├── infrastructure # 基础上设施层，实现仓储接口
-│    │    ├── dbs
-│    │    ├── esearch
-│    │    ├── mqs
-│    │    └── rds
-│    └── interfaces     # 接口层，依赖application层
-│        ├── search_intf.go
-│        ├── tag_intf.go
-│        └── upload_intf.go
-├── build               # 多操作系统，编译文件生成
-├── cmd                 
-│    └── myapp          # 目录文件夹为应用名称，期间仅包含一个main.go文件
-├── configs             # 服务配置文件，包括配置中心、错误码等信息
-│    ├── apollo
-│    ├── confd
-│    └── errcode
-├── deployments         # CI/CD持续部署相关的一些脚本
-├── docs                # 项目相关文档
+│     ├── application                 -- 应用层（业务编排）
+│     │     ├── image_search_app.go
+│     │     └── image_upload_app.go
+│     ├── domain                      -- 领域层（核心业务逻辑处理）
+│     │     ├── entity                -- 领域层-实体
+│     │     ├── repository            -- 领域层-仓储接口
+│     │     └── service               -- 领域层-领域服务
+│     ├── infras                      -- 基础设施层
+│     │     ├── dbs
+│     │     ├── esearch
+│     │     ├── httpclient
+│     │     ├── mqs
+│     │     ├── openaix
+│     │     └── rds
+│     └── interfaces                  -- 接口层
+│         ├── iamge_search_intf.go
+│         └── image_upload_intf.go
+├── cmd
+│     └── imgd
+│         └── main.go
+├── configs
 ├── go.mod
-├── internel            # 从项目内抽离的包，可能被复用到其他项目中去的包
-│    └── reusable
+├── go.sum
+├── internel
 └── test
     └── testdata
 ```

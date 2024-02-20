@@ -9,3 +9,6 @@ type SearchKeywords struct {
 // SearchRsp 搜索响应
 type SearchRsp struct {
 }
+
+type SearchImage struct {
+}

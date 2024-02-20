@@ -1,19 +1,32 @@
 package service
 
 import (
-	"github.com/lupguo/ddd-layout/app/domain/entity"
-	"github.com/lupguo/ddd-layout/app/domain/repository"
+	"github.com/lupguo/go-ddd-layout/app/domain/entity"
+	"github.com/lupguo/go-ddd-layout/app/domain/repository"
 )
 
-type IServiceSearch interface {
-	Search(keywords string) []*entity.UploadImage
+// IImageSearchService 图片搜索服务
+type IImageSearchService interface {
+
+	// Search 通过图片名称、类目、标签、id等关键字搜索图片
+	Search(keywords string) []*entity.Image
 }
 
-type ImageSearchSrv struct{
+// ImageSearchSrv 搜索服务具体实现
+type ImageSearchSrv struct {
 	esRepos *repository.IReposSearch
 	dbRepos *repository.IReposStorage
 }
 
-func (s *ImageSearchSrv) Search(keywords string) []*entity.UploadImage {
+// NewImageSearchSrv 创建搜索服务
+func NewImageSearchSrv(esRepos *repository.IReposSearch, dbRepos *repository.IReposStorage) *ImageSearchSrv {
+	return &ImageSearchSrv{
+		esRepos: esRepos,
+		dbRepos: dbRepos,
+	}
+}
+
+// Search 搜索关键字
+func (s *ImageSearchSrv) Search(keywords string) []*entity.Image {
 	return nil
 }
