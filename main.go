@@ -21,7 +21,7 @@ func main() {
 	httpClientInfra := httpclient.NewHttpClientInfra("socks5h://127.0.0.1:10080")
 
 	// 服务接口实现
-	intf := interfaces.NewUploadImageIntf(
+	uploadServiceIntf := interfaces.NewUploadImageIntf(
 		application.NewImageUploadApp(
 			service.NewImageUploadSrv(
 				dbInfra,
@@ -30,8 +30,10 @@ func main() {
 			),
 		))
 
-	// 上传图片Handler可以作为PB Stub接口实现、HttpHandler处理
-	_, err := intf.UploadImage(context.Background())
+	// todo :
+	//  - 如果是RPC类服务，可以将 uploadServiceIntf 注入到服务接口
+	//  - 如供是HTTP类型服务，可以将 uploadServiceIntf 包装注入到 Web Router中，提供HttpHandle处理能力
+	_, err := uploadServiceIntf.UploadImage(context.Background())
 	if err != nil {
 		return
 	}
